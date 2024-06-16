@@ -51,42 +51,6 @@ end)
 end)
 
 tab:CreateButton("Aimbot",function()
-local function aim(target)
-    if target and target.Character and target.Character:FindFirstChild("Head") then
-        cam.CFrame = CFrame.new(cam.CFrame.Position, target.Character.Head.Position)
-    end
-end
-
-UIS.InputBegan:Connect(function(input, gameProcessed)
-    if gameProcessed then return end
-
-    if input.KeyCode == aimLockedKey then
-        aimLocked = not aimLocked
-
-        if aimLocked then
-            targetPlayer = getnearestPlayer()
-        else
-            targetPlayer = nil
-        end
-    end
-end)
-
-RunService.RenderStepped:Connect(function()
-    if aimLocked then
-        targetPlayer = getnearestPlayer()
-        if targetPlayer then
-            aim(targetPlayer)
-        end
-    end
-
-
-    local mouseLocation = UIS:GetMouseLocation()
-    FOVCircle.Position = Vector2.new(mouseLocation.X, mouseLocation.Y + 36) 
-end)
-
-end)
-
-tab:CreateButton("Esp",function()
     local Players = game:GetService("Players")
 local player = Players.LocalPlayer
 local cam = game.Workspace.CurrentCamera
@@ -207,6 +171,42 @@ local function getnearestPlayer()
     end
     return nearestPlayer
 end
+
+end)
+
+
+local function aim(target)
+    if target and target.Character and target.Character:FindFirstChild("Head") then
+        cam.CFrame = CFrame.new(cam.CFrame.Position, target.Character.Head.Position)
+    end
+end
+
+UIS.InputBegan:Connect(function(input, gameProcessed)
+    if gameProcessed then return end
+
+    if input.KeyCode == aimLockedKey then
+        aimLocked = not aimLocked
+
+        if aimLocked then
+            targetPlayer = getnearestPlayer()
+        else
+            targetPlayer = nil
+        end
+    end
+end)
+
+RunService.RenderStepped:Connect(function()
+    if aimLocked then
+        targetPlayer = getnearestPlayer()
+        if targetPlayer then
+            aim(targetPlayer)
+        end
+    end
+
+
+    local mouseLocation = UIS:GetMouseLocation()
+    FOVCircle.Position = Vector2.new(mouseLocation.X, mouseLocation.Y + 36) 
+end)
 
 end)
 
