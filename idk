@@ -50,8 +50,169 @@ end)
     loadstring(game:HttpGet("https://raw.githubusercontent.com/XNEOFF/FlyGuiV3/main/FlyGuiV3.txt"))()
 end)
 
-tab:CreateButton("Aimbot and Esp",function()
-    loadstring(game:HttpGet('https://raw.githubusercontent.com/jjhot/Aimlock/main/SouthBronxLock'))("")
+tab:CreateButton("Aimbot",function()
+    local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+local cam = game.Workspace.CurrentCamera
+local RunService = game:GetService("RunService")
+
+local function aim(target)
+    if target and target.Character and target.Character:FindFirstChild("Head") then
+        cam.CFrame = CFrame.new(cam.CFrame.Position, target.Character.Head.Position)
+    end
+end
+
+UIS.InputBegan:Connect(function(input, gameProcessed)
+    if gameProcessed then return end
+
+    if input.KeyCode == aimLockedKey then
+        aimLocked = not aimLocked
+
+        if aimLocked then
+            targetPlayer = getnearestPlayer()
+        else
+            targetPlayer = nil
+        end
+    end
+end)
+
+RunService.RenderStepped:Connect(function()
+    if aimLocked then
+        targetPlayer = getnearestPlayer()
+        if targetPlayer then
+            aim(targetPlayer)
+        end
+    end
+
+
+    local mouseLocation = UIS:GetMouseLocation()
+    FOVCircle.Position = Vector2.new(mouseLocation.X, mouseLocation.Y + 36) 
+end)
+
+end)
+
+tab:CreateButton("Esp",function()
+    local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+local cam = game.Workspace.CurrentCamera
+local RunService = game:GetService("RunService")
+
+local ESPs = {}
+
+local function createESP(playerInstance)
+    if playerInstance ~= player then
+        local esp = Drawing.new("Square")
+        esp.Thickness = 3
+        esp.Transparency = 1
+        esp.Filled = false
+        esp.Color = Color3.fromRGB(255, 0, 0)
+        
+        ESPs[playerInstance] = esp
+    end
+end
+
+local function updateESP()
+    for playerInstance, esp in pairs(ESPs) do
+        if playerInstance.Character and playerInstance.Character:FindFirstChild("HumanoidRootPart") then
+            local character = playerInstance.Character
+            local rootPart = character.HumanoidRootPart
+            local head = character:FindFirstChild("Head")
+
+            if rootPart and head then
+                local rootPosition, onScreen = cam:WorldToViewportPoint(rootPart.Position)
+                local headPosition = cam:WorldToViewportPoint(head.Position)
+
+                if onScreen then
+                    local boxHeight = math.abs(headPosition.Y - rootPosition.Y)
+                    local boxWidth = boxHeight / 2
+
+                    esp.Size = Vector2.new(boxWidth, boxHeight)
+                    esp.Position = Vector2.new(rootPosition.X - boxWidth / 2, rootPosition.Y - boxHeight / 2)
+                    esp.Visible = true
+                else
+                    esp.Visible = false
+                end
+            else
+                esp.Visible = false
+            end
+        else
+            esp.Visible = false
+        end
+    end
+end
+
+local function setupESP()
+
+    for _, playerInstance in ipairs(Players:GetPlayers()) do
+        createESP(playerInstance)
+    end
+
+    
+    Players.PlayerAdded:Connect(function(playerInstance)
+        createESP(playerInstance)
+    end)
+
+ 
+    Players.PlayerRemoving:Connect(function(playerInstance)
+        if ESPs[playerInstance] then
+            ESPs[playerInstance]:Remove()
+            ESPs[playerInstance] = nil
+        end
+    end)
+
+  
+    RunService.RenderStepped:Connect(updateESP)
+end
+
+setupESP()
+
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+local cam = game.Workspace.CurrentCamera
+local UIS = game:GetService("UserInputService")
+local RunService = game:GetService("RunService")
+
+local aimLockedKey = Enum.KeyCode.Q
+local aimLocked = false
+local targetPlayer = nil
+
+-- FOV Circle setup
+local FOVCircle = Drawing.new("Circle")
+FOVCircle.Thickness = 2
+FOVCircle.NumSides = 30
+FOVCircle.Radius = 50
+FOVCircle.Filled = false
+FOVCircle.Transparency = 1
+FOVCircle.Color = Color3.fromRGB(255, 0, 0)
+
+local function isWithinFOV(target)
+    local screenPoint, onScreen = cam:WorldToViewportPoint(target.Position)
+    if onScreen then
+        local mouseLocation = UIS:GetMouseLocation()
+        local distanceFromMouse = (Vector2.new(screenPoint.X, screenPoint.Y) - mouseLocation).Magnitude
+        return distanceFromMouse <= FOVCircle.Radius
+    end
+    return false
+end
+
+local function getnearestPlayer()
+    local nearestDistance = math.huge
+    local nearestPlayer = nil
+    for _, playerInstance in ipairs(Players:GetPlayers()) do
+        if playerInstance ~= player and playerInstance.Character and playerInstance.Character:FindFirstChild("Head") then
+            local head = playerInstance.Character.Head
+            if isWithinFOV(head) then
+                local distance = (player.Character.Head.Position - head.Position).Magnitude
+                if distance < nearestDistance then
+                    nearestDistance = distance
+                    nearestPlayer = playerInstance
+                end
+            end
+        end
+    end
+    return nearestPlayer
+end
+
 end)
 
 tab:CreateButton("Click TP Tool",function()
