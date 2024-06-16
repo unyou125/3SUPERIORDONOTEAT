@@ -42,16 +42,12 @@ tab:CreateSlider("JumpPower",50,250,function(a)
     Players.LocalPlayer.Character.Humanoid.JumpPower = a
 end)
 
-tab:CreateSlider("FOV",70,120,function(a)
+tab:CreateSlider("FOV",70,250,function(a)
     game.Workspace.CurrentCamera.FieldOfView = a
 end)
 
   tab:CreateButton("FLY",function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/XNEOFF/FlyGuiV3/main/FlyGuiV3.txt"))()
-end)
-
-tab:CreateButton("Aimbot and Esp",function()
-    loadstring(game:HttpGet('https://raw.githubusercontent.com/jjhot/Aimlock/main/SouthBronxLock'))()
 end)
 
 tab:CreateButton("Click TP Tool",function()
