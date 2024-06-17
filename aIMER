@@ -7,7 +7,7 @@ local ESPs = {}
 
 local function createESP(playerInstance)
     if playerInstance ~= player then
-        local esp = Drawing.new("Circle")
+        local esp = Drawing.new("Square")
         esp.Thickness = 3
         esp.Transparency = 2
         esp.Filled = false
