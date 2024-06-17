@@ -10,7 +10,7 @@ local function createESP(playerInstance)
         local esp = Drawing.new("Square")
         esp.Thickness = 3
         esp.Transparency = 1
-        esp.Filled = false
+        esp.Filled = true
         esp.Color = Color3.fromRGB(255, 0, 0)
         
         ESPs[playerInstance] = esp
@@ -30,7 +30,7 @@ local function updateESP()
 
                 if onScreen then
                     local boxHeight = math.abs(headPosition.Y - rootPosition.Y)
-                    local boxWidth = boxHeight / 2
+                    local boxWidth = boxHeight / 4
 
                     esp.Size = Vector2.new(boxWidth, boxHeight)
                     esp.Position = Vector2.new(rootPosition.X - boxWidth / 2, rootPosition.Y - boxHeight / 2)
@@ -86,7 +86,7 @@ local targetPlayer = nil
 local FOVCircle = Drawing.new("Circle")
 FOVCircle.Thickness = 2
 FOVCircle.NumSides = 30
-FOVCircle.Radius = 50
+FOVCircle.Radius = 106
 FOVCircle.Filled = false
 FOVCircle.Transparency = 1
 FOVCircle.Color = Color3.fromRGB(255, 0, 0)
