@@ -78,7 +78,7 @@ local cam = game.Workspace.CurrentCamera
 local UIS = game:GetService("UserInputService")
 local RunService = game:GetService("RunService")
 
-local aimLockedKey = Enum.KeyCode.E
+local aimLockedKey = Enum.KeyCode.MouseButton2
 local aimLocked = false
 local targetPlayer = nil
 
