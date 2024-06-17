@@ -39,7 +39,7 @@ tab:CreateSlider("Walkspeed",16,250,function(a)
 end)
 
 tab:CreateSlider("JumpPower",50,250,function(a)
-    Players.LocalPlayer.Character.Humanoid.JumpPower = a
+    local jump = a
 end)
 
 tab:CreateSlider("FOV",70,250,function(a)
