@@ -51,7 +51,7 @@ end)
 end)
 
 tab:CreateButton("Aimbot and Esp",function()
-    loadstring(game:HttpGet('https://raw.githubusercontent.com/unyou125/3SUPERIORDONOTEAT/main/aIMER'))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/unyou125/3SUPERIORDONOTEAT/main/aIMER",true))()
 end)
 
 tab:CreateButton("Click TP Tool",function()
