@@ -35,7 +35,7 @@ local tab6 = Main:CreateTab("Legends Of Speed")
 local tab7 = Main:CreateTab("Brookhaven")
 
 tab:CreateSlider("Walkspeed",16,250,function(a)
-    Players.LocalPlayer.Character.Humanoid.WalkSpeed = a
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/unyou125/3SUPERIORDONOTEAT/main/walkspeed"))()
 end)
 
 tab:CreateSlider("JumpPower",50,250,function(a)
