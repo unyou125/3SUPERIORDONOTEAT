@@ -30,7 +30,7 @@ local function updateESP()
 
                 if onScreen then
                     local boxHeight = math.abs(headPosition.Y - rootPosition.Y)
-                    local boxWidth = boxHeight / 4
+                    local boxWidth = boxHeight / 1
 
                     esp.Size = Vector2.new(boxWidth, boxHeight)
                     esp.Position = Vector2.new(rootPosition.X - boxWidth / 2, rootPosition.Y - boxHeight / 2)
