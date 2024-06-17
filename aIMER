@@ -9,7 +9,7 @@ local function createESP(playerInstance)
     if playerInstance ~= player then
         local esp = Drawing.new("Square")
         esp.Thickness = 3
-        esp.Transparency = 2
+        esp.Transparency = 1
         esp.Filled = false
         esp.Color = Color3.fromRGB(255, 0, 0)
         
@@ -30,7 +30,7 @@ local function updateESP()
 
                 if onScreen then
                     local boxHeight = math.abs(headPosition.Y - rootPosition.Y)
-                    local boxWidth = boxHeight / 1
+                    local boxWidth = boxHeight / 2
 
                     esp.Size = Vector2.new(boxWidth, boxHeight)
                     esp.Position = Vector2.new(rootPosition.X - boxWidth / 2, rootPosition.Y - boxHeight / 2)
@@ -78,7 +78,7 @@ local cam = game.Workspace.CurrentCamera
 local UIS = game:GetService("UserInputService")
 local RunService = game:GetService("RunService")
 
-local aimLockedKey = Enum.KeyCode.E
+local aimLockedKey = Enum.KeyCode.T
 local aimLocked = false
 local targetPlayer = nil
 
