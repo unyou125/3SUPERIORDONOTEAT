@@ -35,14 +35,14 @@ local tab6 = Main:CreateTab("Legends Of Speed")
 local tab7 = Main:CreateTab("Brookhaven")
 
 tab:CreateSlider("Walkspeed",16,250,function(a)
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/unyou125/3SUPERIORDONOTEAT/main/walkspeed"))()
+    Players.LocalPlayer.Character.Humanoid.WalkSpeed = a
 end)
 
 tab:CreateSlider("JumpPower",50,250,function(a)
-    local jump = a
+    Players.LocalPlayer.Character.Humanoid.JumpPower = a
 end)
 
-tab:CreateSlider("FOV",70,250,function(a)
+tab:CreateSlider("FOV",70,1000,function(a)
     game.Workspace.CurrentCamera.FieldOfView = a
 end)
 
@@ -66,46 +66,6 @@ tab:CreateButton("Click TP Tool",function()
     end)
     tool.Parent = game.Players.LocalPlayer.Backpack
 end)
-
-
-tab:CreateToggle("Day",function(enabled)
-    if enabled then
-        SetDaytime()
-    else
-        Lighting.TimeOfDay = defaultTime
-    end
-     print("Always Day Enabled", value)
-    end)
-
-    tab:CreateToggle("Night",function(enabled)
-        if enabled then
-            SetMidnight()
-         else
-            Lighting.TimeOfDay = defaultTime
-        end
-         print("Always Night Enabled", value)
-        end)
-
-        tab:CreateToggle("No Fog",function(enabled)
-            if enabled then
-                Lighting.OutdoorAmbient = brightColor
-                Lighting.Ambient = brightColor
-            else
-                Lighting.OutdoorAmbient = defaultOutdoorAmbient
-                Lighting.Ambient = defaultAmbient
-            end
-             print("No Fog Enabled", value)
-            end)
-
-            tab:CreateToggle("Better Graphics",function(enabled)
-                if enabled then
-                    Lighting.OutdoorAmbient = warmColor
-                    Lighting.Ambient = warmColor
-                else
-                    Lighting.OutdoorAmbient = defaultOutdoorAmbient
-                    Lighting.Ambient = defaultAmbient
-                end
-                end)
 
 tab:CreateButton("spinbot",function(enabled)
        power = 800 -- change this to make it more or less powerful
@@ -479,7 +439,44 @@ end
 loadstring(game:HttpGet("https://gist.githubusercontent.com/dark-modz/3e50ce0fdd03713dfbeb1845ee6f52d7/raw/630318908f56a984db9568a89e33eadb7998158a/feutg1",true))()
                   end)
     
+tab:CreateToggle("Day",function(enabled)
+    if enabled then
+        SetDaytime()
+    else
+        Lighting.TimeOfDay = defaultTime
+    end
+     print("Always Day Enabled", value)
+    end)
 
+    tab:CreateToggle("Night",function(enabled)
+        if enabled then
+            SetMidnight()
+         else
+            Lighting.TimeOfDay = defaultTime
+        end
+         print("Always Night Enabled", value)
+        end)
+
+        tab:CreateToggle("No Fog",function(enabled)
+            if enabled then
+                Lighting.OutdoorAmbient = brightColor
+                Lighting.Ambient = brightColor
+            else
+                Lighting.OutdoorAmbient = defaultOutdoorAmbient
+                Lighting.Ambient = defaultAmbient
+            end
+             print("No Fog Enabled", value)
+            end)
+
+            tab:CreateToggle("Better Graphics",function(enabled)
+                if enabled then
+                    Lighting.OutdoorAmbient = warmColor
+                    Lighting.Ambient = warmColor
+                else
+                    Lighting.OutdoorAmbient = defaultOutdoorAmbient
+                    Lighting.Ambient = defaultAmbient
+                end
+                end)
 
 
   
