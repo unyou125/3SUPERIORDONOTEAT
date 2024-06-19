@@ -1,6 +1,6 @@
 local library = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/ShaddowScripts/Main/main/Library"))()
 
-local Main = library:CreateWindow("GyattHub","Crimson")
+local Main = library:CreateWindow("SuperiorHub","Crimson")
 
 local Players = game:GetService("Players")
 local Lighting = game:GetService("Lighting")
@@ -90,6 +90,10 @@ loadstring(game:HttpGet('https://pastebin.com/raw/r97d7dS0'))()
         
 tab:CreateButton("free admin",function(enabled)
 loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+        end)
+
+tab:CreateButton("inf jump",function(enabled)
+while true do gamePlayersLocalPlayerCharacterHumanoidJumpPower = mathhuge end
         end)
 
         tab4:CreateButton("FFJ HUB",function()
