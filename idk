@@ -92,7 +92,7 @@ tab:CreateButton("free admin",function(enabled)
 loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
         end)
 
-tab:CreateButton("inf jump",function(enabled)
+tab:CreateButton("FREEZE ROBLOX",function(enabled)
 while true do gamePlayersLocalPlayerCharacterHumanoidJumpPower = mathhuge end
         end)
 
