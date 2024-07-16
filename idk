@@ -523,3 +523,8 @@ end)
 tab12:CreateButton("Boombox",function()
 loadstring(game:HttpGet('https://pastebin.com/raw/cGh1HHUv'))()
 end)
+
+tab12:CreateButton("a dusty trip",function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/artemy133563/Utilities/main/ADustyTrip",true))()
+end)
+end)
