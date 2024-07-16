@@ -35,6 +35,10 @@ local tab6 = Main:CreateTab("Legends Of Speed")
 local tab7 = Main:CreateTab("Brookhaven")
 local tab8 = Main:CreateTab("MM2")
 local tab9 = Main:CreateTab("Jailbreak")
+local tab10 = Main:CreateTab("Pls Donate")
+local tab11 = Main:CreateTab("Breaking Point")
+local tab12 = Main:CreateTab("Sharkbite")
+
 
 tab:CreateSlider("Walkspeed",16,250,function(a)
     Players.LocalPlayer.Character.Humanoid.WalkSpeed = a
@@ -487,4 +491,15 @@ tab:CreateToggle("Day",function(enabled)
 tab8:CreateButton("SnapSanix",function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Roman34296589/SnapSanix-GUI-MM2/main/SnapSanix%20GUI%20mm2.lua'))() 
 end)
+
+tab8:CreateButton("pepsihub",function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/kortigadulfo/pepsihub/main/mm2.lua"))()
+end)
   
+tab9:CreateButton("ChaoticVoid",function()
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/xChaoticVoid/Jailbreak/main/Chaos.lua'), true))()
+end)
+
+tab10:CreateButton("Pls Donate",function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/7hbl/PLZ-DONate/main/plz%20donate"))();
+end)
