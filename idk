@@ -36,7 +36,6 @@ local tab7 = Main:CreateTab("Brookhaven")
 local tab8 = Main:CreateTab("MM2")
 local tab9 = Main:CreateTab("Jailbreak")
 local tab10 = Main:CreateTab("Pls Donate")
-local tab11 = Main:CreateTab("Breaking Point")
 local tab12 = Main:CreateTab("Games i cant fit💀")
 
 
@@ -504,10 +503,6 @@ tab10:CreateButton("Pls Donate",function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/7hbl/PLZ-DONate/main/plz%20donate"))();
 end)
 
-tab11:CreateButton("Breaking point",function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/ColdStep2/Breaking-Point-Funny-Squid-Hax/main/Breaking%20Point%20Funny%20Squid%20Hax",true))();
-end)
-
 tab12:CreateButton("SharkBite",function()
 loadstring(game:HttpGet("https://scriptblox.com/raw/STEALTH-SharkBite-2-script-13895"))()
 end)
@@ -534,4 +529,8 @@ end)
 
 tab12:CreateButton("The Strongest Battleground",function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/NBLMSCRIPTS/NBLMSCRIPTHUB/main/SKIBIDI"))()
+end)
+
+tab12:CreateButton("Breaking point",function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ColdStep2/Breaking-Point-Funny-Squid-Hax/main/Breaking%20Point%20Funny%20Squid%20Hax",true))();
 end)
