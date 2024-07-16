@@ -33,6 +33,8 @@ local tab4 = Main:CreateTab("blade ball")
 local tab5 = Main:CreateTab("Destruction Simulator")
 local tab6 = Main:CreateTab("Legends Of Speed")
 local tab7 = Main:CreateTab("Brookhaven")
+local tab8 = Main:CreateTab("MM2")
+local tab9 = Main:CreateTab("Jailbreak")
 
 tab:CreateSlider("Walkspeed",16,250,function(a)
     Players.LocalPlayer.Character.Humanoid.WalkSpeed = a
@@ -482,5 +484,7 @@ tab:CreateToggle("Day",function(enabled)
                 end
                 end)
 
-
+tab8:CreateButton("SnapSanix",function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Roman34296589/SnapSanix-GUI-MM2/main/SnapSanix%20GUI%20mm2.lua'))() 
+end)
   
