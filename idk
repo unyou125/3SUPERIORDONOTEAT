@@ -503,3 +503,7 @@ end)
 tab10:CreateButton("Pls Donate",function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/7hbl/PLZ-DONate/main/plz%20donate"))();
 end)
+
+tab11:CreateButton("Breaking point",function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ColdStep2/Breaking-Point-Funny-Squid-Hax/main/Breaking%20Point%20Funny%20Squid%20Hax",true))();
+end)
