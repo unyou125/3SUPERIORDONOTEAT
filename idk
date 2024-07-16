@@ -37,7 +37,7 @@ local tab8 = Main:CreateTab("MM2")
 local tab9 = Main:CreateTab("Jailbreak")
 local tab10 = Main:CreateTab("Pls Donate")
 local tab11 = Main:CreateTab("Breaking Point")
-local tab12 = Main:CreateTab("Sharkbite")
+local tab12 = Main:CreateTab("Games i cant fit💀")
 
 
 tab:CreateSlider("Walkspeed",16,250,function(a)
@@ -506,4 +506,20 @@ end)
 
 tab11:CreateButton("Breaking point",function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/ColdStep2/Breaking-Point-Funny-Squid-Hax/main/Breaking%20Point%20Funny%20Squid%20Hax",true))();
+end)
+
+tab12:CreateButton("SharkBite",function()
+loadstring(game:HttpGet("https://scriptblox.com/raw/STEALTH-SharkBite-2-script-13895"))()
+end)
+
+tab12:CreateButton("football fusion",function()
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/bb2ce6c8f95b42ecec9c45399081758b.lua"))()
+end)
+
+tab12:CreateButton("GymLeague",function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/x64communist/tupo/main/GymLeague.lua"))()
+end)
+
+tab12:CreateButton("Boombox",function()
+loadstring(game:HttpGet('https://pastebin.com/raw/cGh1HHUv'))()
 end)
