@@ -527,4 +527,11 @@ end)
 tab12:CreateButton("a dusty trip",function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/artemy133563/Utilities/main/ADustyTrip",true))()
 end)
+
+tab12:CreateButton("bloxburg",function()
+loadstring(game:HttpGet('https://whimper.xyz/kitty'))()
+end)
+
+tab12:CreateButton("The Strongest Battleground",function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/NBLMSCRIPTS/NBLMSCRIPTHUB/main/SKIBIDI"))()
 end)
