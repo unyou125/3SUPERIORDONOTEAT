@@ -1,0 +1,6 @@
+GEMNAI_KEY = "AIzaSyBRswDyfuxI04bfLjDonQLsHt2h_wekVGo"
+# --------------------------
+
+
+GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyBRswDyfuxI04bfLjDonQLsHt2h_wekVGo"
+"
